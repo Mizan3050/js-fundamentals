@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function printName(method, homeTown, state) {
+      console.log(
+        method +
+          " - " +
+          this.firstName +
+          " " +
+          this.lastName +
+          " " +
+          homeTown +
+          " " +
+          state
+      );
+    }
+
+    const name = {
+      firstName: "Meezan",
+      lastName: "Shaikh",
+    };
+
+    const name2 = {
+      firstName: "Soniya",
+      lastName: "Inamdar",
+    };
+    printName.call(name, "call", "Pune", "Maharashtra");
+    printName.call(name2, "call", "Agra", "UP");
+
+    printName.apply(name, ["apply", "Pune", "Maharashtra"]);
+    printName.apply(name2, ["apply", "Agra", "UP"]);
+
+    bindedFunction1 = printName.bind(name, "bind", "Pune", "Maharashtra");
+    bindedFunction2 = printName.bind(name2, "bind", "Agra", "UP");
+
+    bindedFunction1();
+    bindedFunction2();
+  </script>
+</html>
