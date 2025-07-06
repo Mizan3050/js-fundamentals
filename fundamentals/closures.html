@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width='device-width', initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // Closures - A function enclosed inside a lexical environment is called as closure.
+    // A function surrounded with reference to its surrounding state is called as Closure
+    function x() {
+      let a = 10;
+      function y() {
+        let b = 100;
+        function z() {
+          let c = 1000;
+          console.log(a, b, c);
+        }
+        z();
+      }
+      y();
+    }
+    x();
+    // In this case whenever a nested function returns a function, 
+    // that returned function also stores the reference of its surrounding state which is lexical env.
+  </script>
+</html>
