@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // block scope, in this example the block scope redeclaration of 'a' will shadow the global scope var a;
+    var a = 10;
+    {
+      a = 100;
+      {
+        a = 1000;
+      }
+    }
+
+    let b = 9;
+    {
+      let b = 99; //allowed
+    //   var b = 999; //not allowed
+    }
+
+    // function scope
+    let x = 10;
+    function doY() {
+      let x = 100;
+      console.log(x);
+    }
+    doY();
+    console.log(x);
+
+    // Note behavior of block scope and function scope is different
+    // in function scope you can redeclare same name variable, since var is function scoped
+    // let & const are block scope whereas var is function scoped
+  </script>
+</html>
