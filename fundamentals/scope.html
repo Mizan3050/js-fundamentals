@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // Lexical Scope - Whenever an execution context is created a lexical env is created,
+    // It comprises of local memory and a reference of lexical environment of its parents.
+    // Whenever a variable is encountered during execution, it is first searched in the local memory space,
+    // if not found then it goes to the lexical scope of its parent and performs the step.
+    // this step is performed until found or reaches global space.
+
+    // The chaining of lexical env to find a particular variable is called scope chaining.
+
+    function a() {
+      var b = 10;
+      c();
+      function c() {
+        console.log(b);
+      }
+    }
+    a();
+
+    // 1. call stack created
+    // 2. Global execution will be created
+    // 3. Memory allocation for variable and functions in global space
+    // 4. Code execution for global space
+    // 5. execution context created for funciton a
+    // 6. Memory allocation for variable and functions in function a
+    // 7. Code execution for function c
+    // 8. execution context created for funciton c
+    // 9. Memory allocation for variable and functions in function c
+    // 10. Code execution for function c
+  </script>
+</html>
