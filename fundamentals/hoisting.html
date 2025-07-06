@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // Hoisting - Hoisting is a phenomenon in javascript where we are able to access the variable and functions even before their initialization
+    // functions are stored as the entire functions itself, var is assigned value undefined
+    // How functions are executed
+
+    var x = 1;
+    a();
+    b();
+    console.log(1);
+
+    function a() { // local execution context will be created for function a where value of x will be limited to the function scope only
+      x = 10;
+      console.log(x);
+    }
+
+    function b() { // local execution context will be created for function b where value of x will be limited to the function scope only
+      x = 100;
+      console.log(x);
+    }
+
+    // Output
+    // 10
+    // 100
+    // 1
+
+    // explain what an execution context, what is a call stack, how memory allocation and code execution takes place
+  </script>
+</html>
